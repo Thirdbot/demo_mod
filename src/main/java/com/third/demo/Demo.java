@@ -1,6 +1,7 @@
 package com.third.demo;
 
 import com.mojang.logging.LogUtils;
+import com.third.demo.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -66,7 +67,8 @@ public class Demo {
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        //MODITEM registered
+        ModItems.register(modEventBus);
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
@@ -102,6 +104,7 @@ public class Demo {
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(EXAMPLE_BLOCK_ITEM);
+            event.accept(ModItems.DEMO_ICONS);
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
