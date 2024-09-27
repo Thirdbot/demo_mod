@@ -3,5 +3,16 @@
 	"loader": "forge:seperate_transforms",
 	"base": {
 		"parent": "demo:block/demoblock3d"
-	}
+	},
+	"perspectives":{
+	"gui": {
+		"parent": "demo:block/demoblock3d"
+	},
+		"ground": {
+			"parent": "demo:block/demoblock3d"
+		},
+		"fixed": {
+			"parent": "demo:block/demoblock3d"
+		}
+}
 }

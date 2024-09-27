@@ -41,7 +41,7 @@ public class ModBlocks {
     // Creates a new Block with the id "demo:example_block", combining the namespace and path
     public static final RegistryObject<Block> REAL_GRASSBLOCK = registerBlock("real_grassblock", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
 
-    public static final RegistryObject<Block> DEMOBlOCK3D = registerBlock("demoblock3d",() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
+    public static final RegistryObject<Block> DEMOBlOCK3D = registerBlock("demoblock3d",() -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
 
 
