@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "forge:seperate_transforms",
+	"base": {
+		"parent": "demo:block/demoblock3d"
+	}
+}

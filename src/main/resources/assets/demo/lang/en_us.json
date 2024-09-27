@@ -3,5 +3,6 @@
   "item.demo.god_apple": "GOD Apple",
   "block.demo.real_grassblock": "REaL grass block",
   "creativetab.demo_block": "DEMO BLOCK",
-  "creativetab.demo_item": "DEMO ITEM"
+  "creativetab.demo_item": "DEMO ITEM",
+  "block.demo.demoblock3d": "Demo 3d Block"
 }
