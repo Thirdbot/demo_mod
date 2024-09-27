@@ -2,6 +2,7 @@ package com.third.demo;
 
 import com.mojang.logging.LogUtils;
 import com.third.demo.block.ModBlocks;
+import com.third.demo.item.DemoTab;
 import com.third.demo.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -43,15 +44,15 @@ public class Demo {
     // Create a Deferred Register to hold Blocks which will all be registered under the "demo" namespace
 
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+//    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("demo", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ModItems.DEMO_ICONS.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-            output.accept(ModItems.DEMO_ICONS.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-            }).build());
+//    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
+//    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("demo", () -> CreativeModeTab.builder()
+//            .withTabsBefore(CreativeModeTabs.COMBAT)
+//            .icon(() -> ModItems.DEMO_ICONS.get().getDefaultInstance())
+//            .displayItems((parameters, output) -> {
+//            output.accept(ModItems.DEMO_ICONS.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+//            }).build());
 
     public Demo() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -62,15 +63,18 @@ public class Demo {
         ModItems.register(modEventBus);
         //MODBLOCK registered
         ModBlocks.register(modEventBus);
+        //TABS registered
+        DemoTab.register(modEventBus);
+
         // Register the Deferred Register to the mod event bus so blocks get registered
 
-        CREATIVE_MODE_TABS.register(modEventBus);
+        //CREATIVE_MODE_TABS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+//        modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -90,21 +94,21 @@ public class Demo {
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event)
-    {
-        //Item Creative Tabs
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-        {
-            event.accept(ModItems.DEMO_ICONS);
-            event.accept(ModItems.GOD_APPLE);
-        }
-        //Block Creative Tabs
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-        {
-            event.accept(ModBlocks.REAL_GRASSBLOCK);
-        }
-
-    }
+//    private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event)
+//    {
+//        //Item Creative Tabs
+//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+//        {
+//            event.accept(ModItems.DEMO_ICONS);
+//            event.accept(ModItems.GOD_APPLE);
+//        }
+//        //Block Creative Tabs
+//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+//        {
+//            event.accept(ModBlocks.REAL_GRASSBLOCK);
+//        }
+//
+//    }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
