@@ -43,7 +43,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> REAL_GRASSBLOCK = registerBlock("real_grassblock", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
 
     public static final RegistryObject<Block> TRASHCAN = registerBlock("trashcan",() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-            .requiresCorrectToolForDrops().strength(5).sound(SoundType.METAL)));
+            .requiresCorrectToolForDrops().strength(5,6).sound(SoundType.METAL)));
 
 
 
