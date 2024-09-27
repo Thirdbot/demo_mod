@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "AB"
+  ],
+  "key": {
+    "A": {
+      "item": "demo:titanium_ingot"
+    },
+    "B": {
+      "item": "demo:hammer"
+    }
+  },
+  "result": {
+    "count": 8,
+    "item": "demo:titanium_sheet"
+  }
+}

@@ -27,6 +27,9 @@ public class DemoTab {
                     .title(Component.translatable("creativetab.demo_item")).displayItems((displayParameters, output) ->{
                         output.accept(ModItems.DEMO_ICONS.get());
                         output.accept(ModItems.GOD_APPLE.get());
+                        output.accept(ModItems.TITANIUM_SHEET.get());
+                        output.accept(ModItems.HAMMER.get());
+                        output.accept(ModItems.TITANIUM_INGOT.get());
                     } ).build());
 
     public static void register(IEventBus eventBus)

@@ -30,5 +30,9 @@ public class ModItems {
     public static final RegistryObject<Item> GOD_APPLE = ITEMS.register("god_apple", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEat().nutrition(1).saturationMod(2f).build())));
 
+    public static final RegistryObject<Item> TITANIUM_SHEET = ITEMS.register("titanium_sheet", () -> new Item(new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot", () -> new Item(new Item.Properties().stacksTo(64)));
+
+    public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new Item(new Item.Properties().stacksTo(1)));
 
 }
