@@ -92,11 +92,18 @@ public class Demo {
     // Add the example block item to the building blocks tab
     private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event)
     {
+        //Item Creative Tabs
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(ModBlocks.EXAMPLE_BLOCK);
+        {
             event.accept(ModItems.DEMO_ICONS);
-            event.accept(ModItems.EXAMPLE_BLOCK_ITEM);
-            event.accept(ModItems.EXAMPLE_ITEM);
+            event.accept(ModItems.GOD_APPLE);
+        }
+        //Block Creative Tabs
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            event.accept(ModBlocks.REAL_GRASSBLOCK);
+        }
+
     }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
