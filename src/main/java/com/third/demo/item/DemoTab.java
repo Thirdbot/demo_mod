@@ -20,7 +20,7 @@ public class DemoTab {
             ()->CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.REAL_GRASSBLOCK.get()))
                     .title(Component.translatable("creativetab.demo_block")).displayItems((displayParameters, output) ->{
                         output.accept(ModBlocks.REAL_GRASSBLOCK.get());
-                        output.accept(ModBlocks.DEMOBlOCK3D.get());
+                        output.accept(ModBlocks.TRASHCAN.get());
                     } ).build());
     public static final RegistryObject<CreativeModeTab> ITEM_TAB = DEMO_TAB.register("demo_item",
             ()->CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.DEMO_ICONS.get()))
