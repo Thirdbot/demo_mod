@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "BAB",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "demo:titanium_ingot"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "demo:hammer"
+  }
+}
