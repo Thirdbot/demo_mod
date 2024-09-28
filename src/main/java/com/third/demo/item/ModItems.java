@@ -35,4 +35,5 @@ public class ModItems {
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer", () -> new Item(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> RICK_PORTAL_GUN = ITEMS.register("rick_portal_gun", () -> new Item(new Item.Properties().stacksTo(1)));
 }

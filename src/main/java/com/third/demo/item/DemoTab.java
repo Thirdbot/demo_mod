@@ -30,6 +30,7 @@ public class DemoTab {
                         output.accept(ModItems.TITANIUM_SHEET.get());
                         output.accept(ModItems.HAMMER.get());
                         output.accept(ModItems.TITANIUM_INGOT.get());
+                        output.accept(ModItems.RICK_PORTAL_GUN.get());
                     } ).build());
 
     public static void register(IEventBus eventBus)
