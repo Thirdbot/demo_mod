@@ -1,11 +1,14 @@
 package com.third.demo.block;
 
+import com.mojang.blaze3d.shaders.Uniform;
 import com.third.demo.Demo;
 import com.third.demo.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -42,8 +45,8 @@ public class ModBlocks {
     // Creates a new Block with the id "demo:example_block", combining the namespace and path
     public static final RegistryObject<Block> REAL_GRASSBLOCK = registerBlock("real_grassblock", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
 
-    public static final RegistryObject<Block> TRASHCAN = registerBlock("trashcan",() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-            .requiresCorrectToolForDrops().strength(5,6).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> TRASHCAN = registerBlock("trashcan",() -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops().strength(5).sound(SoundType.METAL), UniformInt.of(2,5)));
 
 
 
